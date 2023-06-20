@@ -72,6 +72,8 @@ public class UserController extends HttpServlet {
     }
 
     private void addUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html; charset=UTF-8");
+        req.setCharacterEncoding("UTF-8");
         String method = req.getMethod();// để biết khi nào dùng post hay get
 
         if (method.equalsIgnoreCase("post")) {
@@ -95,24 +97,10 @@ public class UserController extends HttpServlet {
         boolean isSuccess = userService.deleteUser(id);
     }
 
-//    private void updateUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String method = req.getMethod();
-//        if (method.equalsIgnoreCase("post")) {
-//            String fullname = req.getParameter("fullname");
-//            String email = req.getParameter("email");
-//            int user_id = Integer.parseInt(req.getParameter("id_update"));
-//            System.out.println("ten la " + fullname);
-//            System.out.println("mail la " + email);
-//            System.out.println("id la " + user_id);
-//            userService.updateUser(user_id, email, fullname);
-//
-//        }
-//
-//        req.getRequestDispatcher("/user-update.jsp").forward(req, resp);
-//
-//
-//    }
+
 private void updateUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    resp.setContentType("text/html; charset=UTF-8");
+    req.setCharacterEncoding("UTF-8");
     String method = req.getMethod();
     if (method.equalsIgnoreCase("post")) {
         String fullname = req.getParameter("fullname");

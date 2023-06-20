@@ -68,7 +68,7 @@
         },
         messages: {
             "password": {
-                required: "Bắt buộc nhập username",
+                required: "Bắt buộc nhập password",
                 maxlength: "Hãy nhập tối đa 15 ký tự"
             },
             "username": {

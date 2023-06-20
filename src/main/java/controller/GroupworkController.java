@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "GroupworkController", urlPatterns = {"/groupwork", "/groupwork/add"})
+@WebServlet(name = "GroupworkController", urlPatterns = {"/groupwork", "/groupwork/add","/groupwork/delete"})
 public class GroupworkController extends HttpServlet {
     GroupworkService groupworkService = new GroupworkService();
 
@@ -24,6 +24,10 @@ public class GroupworkController extends HttpServlet {
             case "/groupwork/add":
                 addGroup(request, response);
                 break;
+            case "/user/delete":
+                deleteGroupwork(request, response);
+                break;
+
         }
     }
 
@@ -37,6 +41,10 @@ public class GroupworkController extends HttpServlet {
             case "/groupwork/add":
                 addGroup(request, response);
                 break;
+            case "/user/delete":
+                deleteGroupwork(request, response);
+                break;
+
         }
     }
 
@@ -57,6 +65,12 @@ public class GroupworkController extends HttpServlet {
         List<GroupworkModel> list = groupworkService.getGroupwork();
         request.setAttribute("listGroup", list);
         request.getRequestDispatcher("groupwork.jsp").forward(request, response);
+    }
+
+    private void deleteGroupwork(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        int id = Integer.parseInt(req.getParameter("id"));
+        boolean isSuccess = groupworkService.deleteGroupwork(id);
     }
 
 }

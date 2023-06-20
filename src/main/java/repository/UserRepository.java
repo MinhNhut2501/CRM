@@ -94,7 +94,7 @@ public class UserRepository {
                     "users.fullname , \n" +
                     "users.avatar, \n"+
                     "roles.name \n" +
-                    "FROM users\n" +
+                    "FROM users \n" +
                     "INNER JOIN roles ON  users.role_id = roles.id;";
             PreparedStatement statement = MysqlConfig.getConnection().prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();

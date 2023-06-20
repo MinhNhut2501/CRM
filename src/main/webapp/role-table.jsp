@@ -53,7 +53,8 @@
                                         <td>
                                             <a href="<c:url value="/role/update?id_update=${item.getId()}"/>"
                                                class="btn btn-sm btn-primary">Sửa</a>
-                                            <span roleid="${item.getId()}" class="btn btn-sm btn-danger btn-delete-role">Xóa</span>
+                                            <span roleid="${item.getId()}" class="btn btn-sm btn-danger btn-delete-role"
+                                                   id="btn-delete-role" >Xóa</span>
                                         </td>
                                     </tr>
 
@@ -87,7 +88,8 @@
 <script src="js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/custom.min.js"></script>
-<script src="<c:url value="/js/role-table.js?version=1"/>"></script>
+
+<script src="<c:url value="/js/role-table.js" />"></script>
 <script>
     $(document).ready(function () {
         $('#example').DataTable();

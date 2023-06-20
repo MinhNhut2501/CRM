@@ -7,9 +7,8 @@ $(document).ready(function () {
         var id = $(this).attr("userid")
         var This = $(this)
         $.ajax({
-            method: "POST",
-            url: "http://localhost:8081/demoservlet_cybersoft/user/delete?id=" + id,
-            // data: {name: "John", location: "Boston"}
+            method: "GET",
+            url:"http://localhost:8080/demoservlet_cybersoft/user/delete?id="+id,
         })
             .done(function (result) {
                 This.closest("tr").remove()

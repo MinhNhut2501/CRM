@@ -56,6 +56,8 @@ public class RoleController extends HttpServlet {
     }
 
     private void getAllRole(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         List<RoleModel> list = roleService.getRole();
         request.setAttribute("listRoles", list);
         request.getRequestDispatcher("role-table.jsp").forward(request, response);
@@ -80,6 +82,8 @@ public class RoleController extends HttpServlet {
 
     private void updateRole(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method = request.getMethod();
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         if (method.equalsIgnoreCase("post")) {
             String name = request.getParameter("name");
             String description = request.getParameter("description");

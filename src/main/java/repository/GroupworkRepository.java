@@ -76,4 +76,34 @@ public class GroupworkRepository {
         }
         return groupworkModelList;
     }
+
+
+    public boolean deleteByIdGroup(int id) {
+        Connection connection = null;
+        boolean isSuccess = false;
+        try {
+            connection = MysqlConfig.getConnection();
+            String sql = "delete from jobs j where j.id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+            isSuccess = statement.executeUpdate() > 0;
+        } catch (Exception e) {
+            System.out.println("Error deleteById: " + e.getMessage());
+        } finally {
+            // Try catch chạy xong sẽ chạy vào finally
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.out.println("Lỗi đóng kết nối deleteById: " + e.getMessage());
+                }
+            }
+
+            return isSuccess;
+        }
+    }
+
+
+
 }

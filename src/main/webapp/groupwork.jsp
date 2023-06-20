@@ -55,7 +55,7 @@
                                         <td>${item.getEndDate()}</td>
                                         <td>
                                             <a href="#" class="btn btn-sm btn-primary">Sửa</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                            <a href="#" groupid = "${item.getId()}" class="btn btn-sm btn-danger btn-group-xoa">Xóa</a>
                                             <a href="groupwork-details.html" class="btn btn-sm btn-info">Xem</a>
                                         </td>
                                     </tr>
@@ -89,6 +89,7 @@
 <script src="js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/custom.min.js"></script>
+<script src="<c:url value="/js/groupwork-table.js" />"></script>
 <script>
     $(document).ready(function () {
         $('#example').DataTable();

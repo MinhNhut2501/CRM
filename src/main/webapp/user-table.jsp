@@ -59,8 +59,9 @@
                                         <a href="<c:url value="/user/update?id_update=${item.getId()}"/>"
                                            class="btn btn-sm btn-primary btn-update-user">Sửa</a>
 <%--<a href="<c:url value="user/delete?id=${item.getId()}"/>" class="btn btn-sm btn-danger">Xóa</a>--%>
-                                        <span userid="${item.getId()}"
-                                              class="btn btn-sm btn-danger btn-delete-user">Xóa</span>
+                                        <a href="#" userid="${item.getId()}"
+                                               class="btn btn-sm btn-danger btn-delete-user" >Xóa</a>
+
                                         <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
                                     </td>
                                 </tr>
@@ -95,8 +96,8 @@
 <script src="js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/custom.min.js"></script>
-<script src="<c:url value="/js/user-table.js?version=1"/>"></script>
 <%--<script src="<c:url value="/js/user-update.js?version=1"/>"></script>--%>
+<script src="<c:url value="/js/user-table.js" />"></script>
 <script>
     $(document).ready(function () {
         $('#example').DataTable();
